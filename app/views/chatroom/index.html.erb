@@ -10,133 +10,36 @@
         <a href="#" class="list-group-item list-group-item-action bg-white">A fourth link item</a>
       </div>
     </div>
-    <div class="col-md-8 chat-area">
+    <div class="col-md-8 chat-area bg-secondary-subtle border-start">
       <div class="card-body p-0 h-100">
-
-        <style>
-          .chat-window {
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-          }
-
-          .chat-header {
-            background-color: #075e54;
-            color: white;
-            padding: 8px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-          }
-
-          .chat-body {
-            flex: 1 1 auto;
-            padding: 24px;
-            overflow-y: auto;
-          }
-
-          .message {
-            margin-bottom: 8px;
-            max-width: 70%;
-          }
-
-          .message.received {
-            align-self: flex-start;
-          }
-
-          .message.sent {
-            align-self: flex-end;
-            text-align: right;
-          }
-
-          .message .bubble {
-            padding: 8px;
-            position: relative;
-          }
-
-          .message.received .bubble {
-            background-color: #ffffff;
-          }
-
-          .message.sent .bubble {
-            background-color: #dcf8c6;
-          }
-
-          .message .bubble::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-          }
-
-          .message.received .bubble::after {
-            left: -8px;
-            border-width: 8px 8px 0 0;
-            border-color: #ffffff transparent transparent transparent;
-          }
-
-          .message.sent .bubble::after {
-            right: -8px;
-            border-width: 8px 0 0 8px;
-            border-color: #dcf8c6 transparent transparent transparent;
-          }
-
-          .chat-footer {
-            padding: 10px;
-            background-color: #ffffff;
-            border-top: 1px solid #ddd;
-          }
-
-          .chat-footer input {
-            border: none;
-            border-radius: 20px;
-            padding: 10px 15px;
-            width: calc(100% - 50px);
-            margin-right: 10px;
-          }
-
-          .chat-footer button {
-            background-color: #075e54;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-        </style>
         <div class="chat-window h-100">
           <!-- Chat Header -->
-          <div class="chat-header">
+          <div class="chat-header bg-body-tertiary">
             <div class="d-flex align-items-center">
               <div class="ms-2">John Doe</div>
             </div>
-            <div>Online</div>
+            <div>Actions</div>
           </div>
 
           <!-- Chat Body -->
           <div class="chat-body d-flex flex-column">
             <!-- Received Message -->
             <div class="message received">
-              <div class="bubble rounded fs-6">Hi there! How are you?</div>
+              <div class="bubble bg-white shadow-sm rounded-1">Hi there! How are you?</div>
             </div>
             <!-- Sent Message -->
             <div class="message sent">
-              <div class="bubble rounded fs-6">I'm good, thanks! How about you?</div>
+              <div class="bubble bg-primary-subtle shadow-sm rounded-1">I'm good, thanks! How about you?</div>
             </div>
             <!-- Received Message -->
             <div class="message received">
-              <div class="bubble rounded fs-6">I'm doing well. Any plans for today?</div>
+              <div class="bubble bg-white shadow-sm rounded-1">I'm doing well. Any plans for today?</div>
             </div>
           </div>
 
           <!-- Chat Footer -->
-          <div class="chat-footer d-flex align-items-center">
-            <input type="text" placeholder="Type a message">
+          <div class="chat-footer bg-body-tertiary border-top">
+            <input type="text" class="rounded form-control" placeholder="Type a message">
           </div>
         </div>
 

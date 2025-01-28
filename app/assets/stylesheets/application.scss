@@ -1,7 +1,12 @@
 $primary: #00a884;
-$body_bg: #dbd8d4;
+$primary-bg-subtle: #d9fdd3;
+$light: #dbd8d4;
+$light-rgb: rgb(219, 216, 212);
+$secondary-bg-subtle: #efeae2;
+$tertiary-bg: #f0f2f5;
 
 @import 'bootstrap';
 
 @import 'layout';
 @import 'chatroom';
+@import 'session';

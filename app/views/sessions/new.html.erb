@@ -1,1 +1,19 @@
-Login
+<div class="sessions-container">
+  <%= form_with(scope: :session, local: true, data: { turbo: false }, url: login_path) do |f| %>
+    <h1 class="h4 mb-3 fw-normal">Login</h1>
+
+    <div class="form-floating">
+      <%= f.email_field :email, class: "form-control", placeholder: "email" %>
+      <%= f.label :email, for: "session_email" %>
+    </div>
+    
+    <div class="form-floating">
+      <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+      <%= f.label :password, for: "session_password" %>
+    </div>
+    
+    <%= f.submit "Login", class: "btn btn-primary w-100 py-2 text-white" %>
+
+    <p class="mt-5 mb-3 text-body-secondary">© 2024–2025</p>
+  <% end %>
+</div>
