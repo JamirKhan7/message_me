@@ -8,6 +8,7 @@
   min-height: calc(100vh - 80px);
 
   > form {
+    width: 100%;
     max-width: 350px;
   }
 
@@ -15,7 +16,7 @@
     z-index: 2;
   }
 
-  input[type='email'] {
+  input[type='text'] {
     margin-bottom: -1px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;

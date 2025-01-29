@@ -32,11 +32,7 @@
               <div class="bubble bg-primary-subtle shadow-sm rounded-1">I'm good, thanks! How about you?</div>
             </div>
             
-            <% @messages.each do |message| %>
-              <div class="message sent">
-                <div class="bubble bg-primary-subtle shadow-sm rounded-1"><%= "#{message.user&.username}: #{message.body}" %></div>
-              </div>
-            <% end %>
+            <%= render @messages %>
           </div>
 
           <!-- Chat Footer -->
