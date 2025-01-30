@@ -3,5 +3,17 @@
 //= require popper
 //= require bootstrap
 
-import "@hotwired/turbo-rails"
-import "controllers"
+window.scrollToBottom = function () {
+  var $chatBody = jQuery('.chat-body');
+  if ($chatBody.length > 0) {
+    $chatBody.scrollTop($chatBody[0].scrollHeight);
+  }
+};
+
+jQuery(document).ready(function () {
+  scrollToBottom();
+});
+
+import '@hotwired/turbo-rails';
+import 'controllers';
+import 'channels';

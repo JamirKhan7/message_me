@@ -1,20 +1,19 @@
-<div class="card rounded-0 border-0 shadow app-main">
-  <div class="row g-0 h-100">
-    <div class="col-md-4 bg-white">
+<div class="app-main">
+  <div class="row g-0 h-100 justify-content-center">
+    <div class="col-md-4 d-none">
       <div class="list-group rounded-0 list-group-flush">
         <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-          The current link item
+          Home
         </a>
-        <a href="#" class="list-group-item list-group-item-action bg-white">A second link item</a>
-        <a href="#" class="list-group-item list-group-item-action bg-white">A third link item</a>
-        <a href="#" class="list-group-item list-group-item-action bg-white">A fourth link item</a>
+        <a href="#" class="list-group-item list-group-item-action">Messages</a>
+        <a href="#" class="list-group-item list-group-item-action">Friends</a>
       </div>
     </div>
-    <div class="col-md-8 chat-area bg-secondary-subtle border-start">
+    <div class="col-md-8 chat-area bg-secondary-subtle border-start card rounded-0 shadow border-0">
       <div class="card-body p-0 h-100">
         <div class="chat-window h-100">
           <!-- Chat Header -->
-          <div class="chat-header bg-body-tertiary">
+          <div class="chat-header bg-body-tertiary d-none">
             <div class="d-flex align-items-center">
               <div class="ms-2">John Doe</div>
             </div>
@@ -22,22 +21,18 @@
           </div>
 
           <!-- Chat Body -->
-          <div class="chat-body d-flex flex-column">
-            <!-- Received Message -->
-            <div class="message received">
-              <div class="bubble bg-white shadow-sm rounded-1">Hi there! How are you?</div>
-            </div>
-            <!-- Sent Message -->
-            <div class="message sent">
-              <div class="bubble bg-primary-subtle shadow-sm rounded-1">I'm good, thanks! How about you?</div>
-            </div>
-            
+          <div class="chat-body d-flex flex-column" id="messagesContainer">            
             <%= render @messages %>
           </div>
 
           <!-- Chat Footer -->
           <div class="chat-footer bg-body-tertiary border-top">
-            <input type="text" class="rounded form-control" placeholder="Type a message">
+            <%= form_with(model: @message,
+                          url: message_path,
+                          local: true) do |f| %>
+              <%= f.text_field :body, class: "rounded form-control", placeholder: "Type a message" %>
+              <%= f.hidden_field :user_id_hidden, value: current_user.id %>
+            <% end %>
           </div>
         </div>
 
